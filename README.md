@@ -66,6 +66,25 @@ GET /api/orders/
 GET /api/metrics/
 ```
 
+
+```bash
+# curl to create new order
+curl -X POST http://localhost:8000/api/orders/ \
+     -H "Content-Type: application/json" \
+     -d '{"user_id": "user44", "item_ids": [1, 2, 3], "total_amount": 90.99}'
+```
+
+```bash
+# curl for single order status check
+curl http://localhost:8000/api/orders/{order_id}/status/
+```
+
+```bash
+# curl for monitoring metrics
+curl http://localhost:8000/api/metrics/
+```
+
+
 ## Design Decisions and Trade-offs
 
 1. **In-Memory Queue**
@@ -106,22 +125,4 @@ for i in {1..1000}; do
     -H "Content-Type: application/json" \
     -d '{"user_id":"test_user","item_ids":[1,2],"total_amount":99.99}' &
 done
-```
-
-
-```bash
-# curl to create new order
-curl -X POST http://localhost:8000/api/orders/ \
-     -H "Content-Type: application/json" \
-     -d '{"user_id": "user44", "item_ids": [1, 2, 3], "total_amount": 90.99}'
-```
-
-```bash
-# curl for single order status check
-curl http://localhost:8000/api/orders/{order_id}/status/
-```
-
-```bash
-# curl for monitoring metrics
-curl http://localhost:8000/api/metrics/
 ```
