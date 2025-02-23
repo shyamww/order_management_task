@@ -59,13 +59,6 @@ GET /api/orders/{order_id}/status/
 GET /api/orders/
 ```
 
-### Metrics
-
-1. Get System Metrics
-```bash
-GET /api/metrics/
-```
-
 
 ```bash
 # curl to create new order
@@ -84,6 +77,16 @@ curl http://localhost:8000/api/orders/{order_id}/status/
 curl http://localhost:8000/api/metrics/
 ```
 
+
+
+
+
+### Metrics
+
+1. Get System Metrics
+```bash
+GET /api/metrics/
+```
 
 ## Design Decisions and Trade-offs
 
